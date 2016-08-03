@@ -11,6 +11,7 @@ import {MyAnimate01} from './animate01';
 import {MyAnimate02} from './animate02';
 import {MyAnimate03} from './animate03';
 import {MyAnimate04} from './animate04';
+import {MyAnimate05} from './animate05';
 
 @Component({
   selector: 'my-app',
@@ -20,8 +21,9 @@ import {MyAnimate04} from './animate04';
     <my-animate-02></my-animate-02>
     <my-animate-03></my-animate-03>
     <my-animate-04></my-animate-04>
+    <my-animate-05></my-animate-05>
     `
-  ,directives: [MyAnimate01, MyAnimate02, MyAnimate03, MyAnimate04]
+  ,directives: [MyAnimate01, MyAnimate02, MyAnimate03, MyAnimate04, MyAnimate05]
 })
 
 export class AppComponent {
