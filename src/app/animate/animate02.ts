@@ -9,10 +9,10 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'my-animate-01',
+  selector: 'my-animate-02',
   template: `
     <div
-      @heroState="heroes.state"
+      [@heroState]="heroes.state"
       (click)="toggleState()">
     {{heroes.name}}</div>
     `,
@@ -20,6 +20,7 @@ import {
     div {
       height: 50px;
       width: 100px;
+      background-color: #eee;
     }
   `],
   animations: [
@@ -27,18 +28,16 @@ import {
       transition('inactive => active', animate('100ms ease-in')),
       transition('active => inactive', animate('100ms ease-out')),
       state('inactive', style({ 
-        backgroundColor: '#eee',
-        transform: 'scale(1)'
+        transform: 'translateX(100%)'
       })),
       state('active', style({
-        backgroundColor: '#cfd8dc',
-        transform: 'scale(1.1)'
+        transform: 'translateX(0%)'
       }))
     ])
   ]
 })
 
-export class MyAnimate01 {
+export class MyAnimate02 {
   public heroes = {
     state: 'active',
     name: 'Angular2'

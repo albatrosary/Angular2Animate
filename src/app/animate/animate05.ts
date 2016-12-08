@@ -12,7 +12,7 @@ import {
   selector: 'my-animate-05',
   template: `
     <div
-      @heroState="heroes.state"
+      [@heroState]="heroes.state"
       (click)="toggleState()">
     {{heroes.name}}</div>
     `,

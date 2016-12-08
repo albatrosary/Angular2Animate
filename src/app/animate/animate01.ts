@@ -9,39 +9,36 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'my-animate-04',
+  selector: 'my-animate-01',
   template: `
-    <div
-      @heroState="heroes.state"
-      (click)="toggleState()">
-    {{heroes.name}}</div>
+    <div [@heroState]="heroes.state"
+         (click)="toggleState()">
+    {{heroes.name}}
+    </div>
     `,
   styles: [`
     div {
       height: 50px;
       width: 100px;
-      background-color: #eee;
     }
   `],
   animations: [
     trigger('heroState', [
       transition('inactive => active', animate('100ms ease-in')),
       transition('active => inactive', animate('100ms ease-out')),
-      state('inactive', style([{ 
-        transform: 'translateY(100%)'
-      }, { 
-        backgroundColor: '#eee'
-      }])),
-      state('active', style([{
-        transform: 'translateY(0%)'
-      }, {
-        backgroundColor: '#cfd8dc'
-      }]))
+      state('inactive', style({ 
+        backgroundColor: '#eee',
+        transform: 'scale(1)'
+      })),
+      state('active', style({
+        backgroundColor: '#cfd8dc',
+        transform: 'scale(1.1)'
+      }))
     ])
   ]
 })
 
-export class MyAnimate04 {
+export class MyAnimate01 {
   public heroes = {
     state: 'active',
     name: 'Angular2'
